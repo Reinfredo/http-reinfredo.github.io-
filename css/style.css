@@ -1,15 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap");
 * {
   box-sizing: border-box; }
 
+html {
+  background: linear-gradient(#8B00FF, #530099 30%, #240A40 70%); }
+
 body {
+  overflow: hidden;
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  body img {
+    width: 400px; }
 
-h1 {
-  color: #f00; }
+h2 {
+  color: #8B00FF;
+  text-align: center;
+  font-family: Montserrat, sans-serif; }
 
 /*# sourceMappingURL=style.css.map */

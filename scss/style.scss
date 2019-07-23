@@ -1,16 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700&display=swap');
+
+// COLORS **********************************************************************
+
+$primary: #8B00FF;
+$secondary: #240A40;
+@mixin header(){
+  font-family: Montserrat, sans-serif;
+}
+
+@mixin body(){
+  font-family: 'Open Sans', sans-serif;
+}
+
+// GENERAL *********************************************************************
+
 * {
   box-sizing: border-box;
 }
 
+html {
+  background: linear-gradient($primary, darken($primary, 20%) 30%, $secondary 70%);
+}
+
 body {
+  overflow: hidden;
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  img {
+    width: 400px;
+  }
 }
 
-h1 {
-  color: #f00;
+h2 {
+  color: $primary;
+  text-align: center;
+  @include header();
 }
