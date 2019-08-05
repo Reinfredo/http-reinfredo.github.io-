@@ -18,26 +18,177 @@ $secondary: #240A40;
   box-sizing: border-box;
 }
 
-html {
-  background: linear-gradient($primary, darken($primary, 20%) 30%, $secondary 70%);
+h2 {
+  color: $secondary;
+  text-align: center;
+  @include header();
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  @include body();
 
-  img {
-    width: 400px;
+// NAVBAR **********************************************************************
+
+  nav {
+    background: $secondary;
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 1px 0 100px 15px $primary;
+
+    a {
+      display: inline-block;
+    }
+
+    #logo {
+      width: 140px;
+      margin: 0 auto 0 10px;
+
+      img {
+        width: 100%;
+      }
+    }
   }
-}
 
-h2 {
-  color: $primary;
-  text-align: center;
-  @include header();
+// CONTENT *********************************************************************
+
+  .hero {
+    width: 100vw;
+    background: url('../assets/code.jpg');
+    background-size: cover;
+    background-position: center;
+
+    .hero-overlay{
+      padding: 10% 20%;
+      background: linear-gradient(rgba(36,10,64, 0.6), rgba(36,10,64, 0.8) 30%, rgba(36,10,64, 0.8) 70%, rgba(36,10,64, 0.6));
+
+      h2, h3 {
+        color: $primary;
+      }
+    }
+  }
+
+  main {
+    flex-grow: 1;
+    padding-bottom: 50px;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 80%;
+      margin: auto;
+    }
+
+    .offer-details {
+      display: flex;
+      justify-content: space-around;
+
+      div.offer {
+        width: 40%;
+        border: 1px solid $secondary;
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        img {
+          width: 100%;
+        }
+
+        .content {
+          padding: 5% 8%;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          p {
+            font-size: 0.8rem;
+          }
+
+          h3 {
+            margin: 0;
+          }
+        }
+
+        .bottom-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p {
+            display: flex;
+            flex-direction: column;
+
+            span {
+              font-size: 1.5rem;
+            }
+
+          }
+
+          button {
+            height: 3rem;
+            background: $secondary;
+            color: $primary;
+            @include header();
+            font-weight: 700;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+
+            span {
+              display: block;
+              transition: transform 0.3s ease;
+            }
+
+            &:active,
+            &:focus {
+              outline: none;
+            }
+
+            &:hover {
+              background: $primary;
+              color: $secondary;
+            }
+
+            &:active {
+              box-shadow: inset 1px 0px 10px 2px $secondary;
+
+              span {
+                transform: scale(0.95);
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  footer {
+    background: $secondary;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $primary;
+      font-size: 2rem;
+    }
+  }
 }
