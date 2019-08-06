@@ -185,11 +185,26 @@ div.modal-overlay {
           font-size: 1rem; }
 
 @media only screen and (max-width: 450px) {
+  body main section.hero div.hero-overlay {
+    padding: 10% 5%; }
   body main section.offer-details {
     flex-direction: column;
     align-items: center; }
     body main section.offer-details div.offer {
       width: 100%;
-      margin: 10px 0; } }
+      margin: 10px 0; }
+      body main section.offer-details div.offer div.content p {
+        font-size: 1rem; }
+      body main section.offer-details div.offer button.callback {
+        font-size: 1rem; }
+  body .modal {
+    width: 90%; }
+    body .modal h2 {
+      font-size: 1.3rem; }
+    body .modal p,
+    body .modal ul {
+      font-size: 1.1rem; }
+    body .modal a#mailButton {
+      font-size: 1.2rem; } }
 
 /*# sourceMappingURL=style.css.map */
