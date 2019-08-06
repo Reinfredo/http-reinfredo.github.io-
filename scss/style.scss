@@ -4,12 +4,50 @@
 
 $primary: #8B00FF;
 $secondary: #240A40;
+
+// MIXINS **********************************************************************
+
 @mixin header(){
   font-family: Montserrat, sans-serif;
 }
 
 @mixin body(){
   font-family: 'Open Sans', sans-serif;
+}
+
+@mixin button(){
+  height: 3rem;
+  background: $secondary;
+  color: $primary;
+  @include header();
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  span {
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: $primary;
+    color: $secondary;
+  }
+
+  &:active {
+    box-shadow: inset 1px 0px 10px 2px $secondary;
+
+    span {
+      transform: scale(0.95);
+    }
+  }
 }
 
 // GENERAL *********************************************************************
@@ -139,37 +177,7 @@ body {
           }
 
           button {
-            height: 3rem;
-            background: $secondary;
-            color: $primary;
-            @include header();
-            font-weight: 700;
-            font-size: 0.75rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-
-            span {
-              display: block;
-              transition: transform 0.3s ease;
-            }
-
-            &:active,
-            &:focus {
-              outline: none;
-            }
-
-            &:hover {
-              background: $primary;
-              color: $secondary;
-            }
-
-            &:active {
-              box-shadow: inset 1px 0px 10px 2px $secondary;
-
-              span {
-                transform: scale(0.95);
-              }
-            }
+            @include button();
           }
         }
 
@@ -189,6 +197,70 @@ body {
       text-decoration: none;
       color: $primary;
       font-size: 2rem;
+    }
+  }
+}
+
+// MODAL ***********************************************************************
+
+div.modal-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(169,169,169,0.9);
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.5s ease;
+
+  &.displayed {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .modal {
+    border: 5px solid $secondary;
+    border-radius: 20px;
+    background: lighten($primary, 40%);
+    padding: 2% 4%;
+    display: flex;
+    flex-direction: column;
+
+    span.exit {
+      align-self: flex-end;
+      font-size: 2rem;
+      cursor: pointer;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    ul {
+      margin-top: 0;
+
+      p {
+        margin: 0 0 5px;
+      }
+    }
+
+    a#mail-button {
+      align-self: center;
+      margin-right: 20px;
+
+      button {
+        @include button();
+        padding: 0 10%;
+
+        span {
+          font-size: 1rem;
+        }
+      }
     }
   }
 }

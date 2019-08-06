@@ -91,7 +91,8 @@ body {
             font-weight: 700;
             font-size: 0.75rem;
             border-radius: 4px;
-            transition: all 0.3s ease; }
+            transition: all 0.3s ease;
+            cursor: pointer; }
             body main .offer-details div.offer .bottom-content button span {
               display: block;
               transition: transform 0.3s ease; }
@@ -115,5 +116,68 @@ body {
       text-decoration: none;
       color: #8B00FF;
       font-size: 2rem; }
+
+div.modal-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(169, 169, 169, 0.9);
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.5s ease; }
+  div.modal-overlay.displayed {
+    opacity: 1;
+    transform: scale(1); }
+  div.modal-overlay .modal {
+    border: 5px solid #240A40;
+    border-radius: 20px;
+    background: #e8ccff;
+    padding: 2% 4%;
+    display: flex;
+    flex-direction: column; }
+    div.modal-overlay .modal span.exit {
+      align-self: flex-end;
+      font-size: 2rem;
+      cursor: pointer; }
+      div.modal-overlay .modal span.exit:hover {
+        color: #8B00FF; }
+    div.modal-overlay .modal ul {
+      margin-top: 0; }
+      div.modal-overlay .modal ul p {
+        margin: 0 0 5px; }
+    div.modal-overlay .modal a#mail-button {
+      align-self: center;
+      margin-right: 20px; }
+      div.modal-overlay .modal a#mail-button button {
+        height: 3rem;
+        background: #240A40;
+        color: #8B00FF;
+        font-family: Montserrat, sans-serif;
+        font-weight: 700;
+        font-size: 0.75rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        padding: 0 10%; }
+        div.modal-overlay .modal a#mail-button button span {
+          display: block;
+          transition: transform 0.3s ease; }
+        div.modal-overlay .modal a#mail-button button:active, div.modal-overlay .modal a#mail-button button:focus {
+          outline: none; }
+        div.modal-overlay .modal a#mail-button button:hover {
+          background: #8B00FF;
+          color: #240A40; }
+        div.modal-overlay .modal a#mail-button button:active {
+          box-shadow: inset 1px 0px 10px 2px #240A40; }
+          div.modal-overlay .modal a#mail-button button:active span {
+            transform: scale(0.95); }
+        div.modal-overlay .modal a#mail-button button span {
+          font-size: 1rem; }
 
 /*# sourceMappingURL=style.css.map */
