@@ -184,4 +184,12 @@ div.modal-overlay {
         div.modal-overlay .modal a#mail-button button span {
           font-size: 1rem; }
 
+@media only screen and (max-width: 450px) {
+  body main section.offer-details {
+    flex-direction: column;
+    align-items: center; }
+    body main section.offer-details div.offer {
+      width: 100%;
+      margin: 10px 0; } }
+
 /*# sourceMappingURL=style.css.map */
