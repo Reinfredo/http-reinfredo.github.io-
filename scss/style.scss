@@ -214,22 +214,28 @@ div.modal-overlay {
   top: 0;
   left: 0;
   z-index: 2;
-  transform: scale(0);
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
 
   &.displayed {
     opacity: 1;
-    transform: scale(1);
+    pointer-events: auto;
+
+    .modal {
+      transform: scale(1);
+    }
   }
 
   .modal {
+    transform: scale(0);
     border: 5px solid $secondary;
     border-radius: 20px;
     background: lighten($primary, 40%);
     padding: 2% 4%;
     display: flex;
     flex-direction: column;
+    transition: transform 0.5s ease;
 
     span.exit {
       align-self: flex-end;
