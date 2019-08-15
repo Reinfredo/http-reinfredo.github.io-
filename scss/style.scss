@@ -18,7 +18,7 @@ $secondary: #240A40;
 @mixin button(){
   height: 3rem;
   background: $secondary;
-  color: $primary;
+  color: lighten($primary, 25%);
   @include header();
   font-weight: 700;
   font-size: 0.75rem;
@@ -111,7 +111,7 @@ body {
       background: linear-gradient(rgba(36,10,64, 0.6), rgba(36,10,64, 0.8) 30%, rgba(36,10,64, 0.8) 70%, rgba(36,10,64, 0.6));
 
       h2, h3 {
-        color: $primary;
+        color: lighten($primary, 25%);
       }
     }
   }
@@ -195,8 +195,14 @@ body {
 
     a {
       text-decoration: none;
-      color: $primary;
+      color: lighten($primary, 25%);
       font-size: 2rem;
+      padding: 0 5px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary;
+      }
     }
   }
 }
@@ -275,8 +281,6 @@ div.modal-overlay {
 
 @media only screen and (max-width: 450px) {
   body {
-
-
     main {
       section.hero {
         div.hero-overlay {

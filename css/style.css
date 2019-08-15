@@ -41,7 +41,7 @@ body {
       padding: 10% 20%;
       background: linear-gradient(rgba(36, 10, 64, 0.6), rgba(36, 10, 64, 0.8) 30%, rgba(36, 10, 64, 0.8) 70%, rgba(36, 10, 64, 0.6)); }
       body .hero .hero-overlay h2, body .hero .hero-overlay h3 {
-        color: #8B00FF; }
+        color: #c580ff; }
   body main {
     flex-grow: 1;
     padding-bottom: 50px; }
@@ -86,7 +86,7 @@ body {
           body main .offer-details div.offer .bottom-content button {
             height: 3rem;
             background: #240A40;
-            color: #8B00FF;
+            color: #c580ff;
             font-family: Montserrat, sans-serif;
             font-weight: 700;
             font-size: 0.75rem;
@@ -114,8 +114,12 @@ body {
     align-items: center; }
     body footer a {
       text-decoration: none;
-      color: #8B00FF;
-      font-size: 2rem; }
+      color: #c580ff;
+      font-size: 2rem;
+      padding: 0 5px;
+      transition: color 0.3s ease; }
+      body footer a:hover {
+        color: #8B00FF; }
 
 div.modal-overlay {
   position: fixed;
@@ -161,7 +165,7 @@ div.modal-overlay {
       div.modal-overlay .modal a#mail-button button {
         height: 3rem;
         background: #240A40;
-        color: #8B00FF;
+        color: #c580ff;
         font-family: Montserrat, sans-serif;
         font-weight: 700;
         font-size: 0.75rem;
